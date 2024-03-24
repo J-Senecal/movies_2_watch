@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+#loginRegDisplay {
+    margin: 0px auto;
+    background-image: url('../img/login_background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    
+}
+#reg {
+    justify-content: space-around ;
+}
+.registration, .login {
+    background-color: azure;
+    border: 2px solid black;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 5%;
+    width: 30vw;
+   
+}
+
+.registration {
+    margin-right: 10px;
+}
+
+.login {
+    margin-left: 10px;
+}

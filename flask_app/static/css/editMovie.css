@@ -1,0 +1,57 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    } */
+.header {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+}
+#headerIMG {
+    margin: 0px 8vw;
+}
+.navLink {
+    color: black;
+    text-decoration: none;
+}
+.display {
+    background-image: url('../img/emperor_lightning.jpeg');
+    height: 100vh;
+    background-size: cover;
+}
+.edit-title {
+    text-align: center;
+    color: aliceblue;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    font-family: fantasy;
+    font-size: 50px;
+}
+.updateForm {
+    border: 3px solid black;
+    background-color: hwb(202 46% 4%);
+    border-radius: 2%;
+    width: 30vw;
+    margin: 30px;
+    margin-left: 100px;
+}
+.edit-label {
+    color: aliceblue;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    margin: 15px 0px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.edit-submit {
+    margin-bottom: 10px;
+}
+.checkbox-container {
+    /* display: flex; */
+    /* align-items: center; */
+}
+#watched {
+    margin-left: 20px;
+    height: 20px;
+    width: 20px;
+}

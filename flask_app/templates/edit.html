@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/editMovie.css')}}">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <button class="btn btn-light"><a class='navLink' href="/dashboard">Home</a></button>
+            <img id="headerIMG" src="{{ url_for ('static', filename='img/header.png')}}" alt="movie marquee">
+            <button class="btn btn-light"><a class='navLink'href="/movies/new">Add Movies</a></button>
+        </nav>
+    </div>
+    <div class="display">
+        <h1 class="edit-title">Welcome {{session['first_name']}}, Edit {{movie.title}}</h1>
+        <!-- <h3 class="red">Description must not be blank</h3> -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="red js-h1"><strong>{{message}}</strong></p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form class="row align-items-start gx-5 justify-content-start " action="/movies/update" method="post">
+            <div class="col-4 updateForm">
+                <div class="row">
+                    <label for="title" class="edit-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{movie.title}}">
+                    <input type="hidden" class="form-control" id="id" name="id" value="{{movie.id}}">
+                </div>
+
+                <div class="row js-form-space">
+                    <label for="friend" class="edit-label">Friend:</label>
+                    <input type="text" rows="4" class="form-control" id="friend" name="friend" value="{{movie.friend}}"></input>
+                </div>
+
+                <div class="row js-form-space">
+                    <label for="date" class="edit-label">Date:</label>
+                    <input type="date" rows="4" class="form-control" id="date" name="date" value="{{movie.date}}"></input>
+                </div>
+
+                {% if movie.watched == 1 %}
+                <div class="checkbox-container">
+                    <label for="watched" class="edit-label">Watched:</label>
+                    <input type="checkbox" id="watched" name="watched" value="1" checked>
+                </div>
+
+                {% else %}
+                <div class=" checkbox-container">
+                    <label for="watched" class="form-label">Watched:</label>
+                    <input type="checkbox" id="watched" name="watched" value="1">
+                </div>
+                {% endif %}
+
+                <button type="submit" class="btn btn-primary edit-submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand js-nav-left" href="/">
+            Welcome, {{session['first_name']}}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto mt-2">
+                <a class="nav-link js-nav-right" href="/dashboard">Dashboard</a>
+                <a class="nav-link js-nav-right" href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav> -->
