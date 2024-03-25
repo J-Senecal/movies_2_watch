@@ -17,8 +17,7 @@
     </div>
     <div class="display-new">
         <div class="text-box">
-            <h1>Hello {{session['first_name']}}</h1>
-            <h1 class="js-h1">Add a Movie</h1>
+            <h1 class="new-title">Hello {{session['first_name']}}</h1>
         </div>
         <!-- <h3 class="red">Description must not be blank</h3> -->
         {% with messages = get_flashed_messages() %}
@@ -29,28 +28,28 @@
             {% endif %}
         {% endwith %}
         <form class="row align-items-start gx-5 justify-content-start new-form" action="/movies/create" method="post">
-            <div class="col-4 js-edit">
-                <div class="row">
-                    <label for="title" class="form-label">Title:</label>
-                    <input type="text" class="form-control" id="title" name="title">
+            <h1 class="new-title">Add a Movie</h1>
+            <div class="form-container">
+                <div class="form-row row1">
+                    <label for="date" class="new-label">Date:</label>
+                    <input type="date" rows="4" class="input1" id="date" name="date"></input>  
                 </div>
-
-                <div class="row js-form-space">
-                    <label for="friend" class="form-label">Friend:</label>
-                    <input type="text" rows="4" class="form-control" id="friend" name="friend"></input>
+                <div class="form-row row2">
+                    <label for="title" class="new-label">Title:</label>
+                    <input type="text" class="input2" id="title" name="title">
                 </div>
-
-                <div class="row js-form-space">
-                    <label for="date" class="form-label">Date:</label>
-                    <input type="date" rows="4" class="form-control" id="date" name="date"></input>
+                <div class="form-row row3">
+                    <label for="friend" class="new-label">Recommended By:</label>
+                    <input type="text" rows="4" class="input3" id="friend" name="friend"></input>
                 </div>
-
-                <div class="row js-form-space">
+                <div class="row4">
                     <label for="watched" class="form-label">Watched:</label>
                     <input type="checkbox" id="watched" name="watched" value="1">
                     <!-- <input type="checkbox" id="watched" name="watched" value="0" hidden checked> -->
                 </div>
-                <button type="submit" class="btn btn-primary js-create-btn">Submit</button>
+                <div class="row5">
+                    <button type="submit" class="btn btn-primary new-btn">Submit</button>
+                </div>
             </div>
             
         </form>
