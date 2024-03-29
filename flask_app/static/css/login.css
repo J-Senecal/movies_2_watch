@@ -22,8 +22,7 @@
     margin-top: 50px;
     padding: 10px;
     border-radius: 5%;
-    width: 30vw;
-   
+    width: 30vw;  
 }
 
 .registration {
@@ -32,4 +31,9 @@
 
 .login {
     margin-left: 10px;
+}
+
+.error {
+    background-color: red;
+    color: white;
 }

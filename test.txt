@@ -1,0 +1,11 @@
+user table - login/reg - email, password, confirm pw, firstName
+https://www.omdbapi.com/
+movies table - title, who recommend, date recommended, watched, rating?
+search by title, genre....
+dashboard - hello user, have a list of movies sorted by rotten tomatoes
+C- who recommended, what movie, when, watched
+R- get all recommended movies
+U - when, by who, or watched or not
+D - remove movie from list
+
+click on movie to go to detail page, with API call

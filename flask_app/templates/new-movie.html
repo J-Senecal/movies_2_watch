@@ -20,16 +20,16 @@
             <h1 class="new-title">Hello {{session['first_name']}}</h1>
         </div>
         <!-- <h3 class="red">Description must not be blank</h3> -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <p class="red js-h1"><strong>{{message}}</strong></p>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
         <form class="row align-items-start gx-5 justify-content-start new-form" action="/movies/create" method="post">
             <h1 class="new-title">Add a Movie</h1>
             <div class="form-container">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error"><strong>{{message}}</strong></p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
                 <div class="form-row row1">
                     <label for="date" class="new-label">Date:</label>
                     <input type="date" rows="4" class="input1" id="date" name="date"></input>  
